@@ -1183,7 +1183,7 @@ ImageButton.Parent = ScreenGui
 ImageButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 ImageButton.BorderSizePixel = 0
 ImageButton.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
-ImageButton.Size = UDim2.new(0, 50, 0, 55)
+ImageButton.Size = UDim2.new(0, 30, 0, 35)
 ImageButton.Draggable = true
 ImageButton.Image = "http://www.roblox.com/asset/?id=104450799419041"
 
@@ -1197,7 +1197,7 @@ end)
 local function playSound()
 	local sound = Instance.new("Sound", game:GetService("CoreGui"))
 	sound.SoundId = "rbxassetid://8219599909"
-	sound.Volume = 10
+	sound.Volume = 4
 	sound:Play()
 end
 
@@ -1235,7 +1235,19 @@ if not game:IsLoaded() then
 end--------------------------------------------------------------------------------
     --Remove Effect
     -----------------------------------------------------------
-    DamageAura = true
+if game:GetService("ReplicatedStorage").Effect.Container:FindFirstChild("Death") then
+        game:GetService("ReplicatedStorage").Effect.Container.Death:Destroy()
+    end
+    if game:GetService("ReplicatedStorage").Effect.Container:FindFirstChild("Respawn") then
+        game:GetService("ReplicatedStorage").Effect.Container.Respawn:Destroy()
+    e
+
+    spawn(function()
+		local v930_args = require(game.ReplicatedStorage.Util.CameraShaker)
+		v930_args:Stop()
+	end)    
+
+DamageAura = true
 NoAttackAnimation = true
 local DmgAttack = game:GetService("ReplicatedStorage").Assets.GUI:WaitForChild("DamageCounter")
 local PC = require(game.Players.LocalPlayer.PlayerScripts.CombatFramework.Particle)
