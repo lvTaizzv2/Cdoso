@@ -1527,7 +1527,7 @@ end)
 SliderPosZ:SetValue(0)
 local random_pos = math.random(0, 30)
 
-local DropdownSelectWeapon = Tabs.Setting:AddDropdown("DropdownSelectWeapon", {
+local DropdownSelectWeapon = Tabs.Main:AddDropdown("DropdownSelectWeapon", {
     Title = "Select M1 Weapon ",
     Description = "",
     Values = {'Melee','Sword','Blox Fruit'},
